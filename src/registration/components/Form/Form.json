@@ -1,0 +1,53 @@
+[
+  {
+    "uid": 1,
+    "type": "text",
+    "name":"FormStudentName",
+    "label": "Student Name",
+    "placeholder": "Enter your name...",
+    "autofocus": true,
+    "required":true,
+    "id":"form_student_name"
+  },
+  {
+    "uid": 2,
+    "type": "date",
+    "name":"studentDob",
+    "label": "Date of Birth",
+    "placeholder": "",
+    "autofocus": false,
+    "required":true,
+    "id":"form_student_dob"
+  },
+  {
+    "uid": 3,
+    "type": "text",
+    "name":"studentFatherName",
+    "label": "Father's Name",
+    "placeholder": "Enter your father name...",
+    "autofocus": false,
+    "required":true,
+    "id":"form_father_name"
+    
+  },
+  {
+    "uid": 4,
+    "type": "text",
+    "name":"fatherQualification",
+    "label": "Qualification",
+    "placeholder": "",
+    "autofocus": false,
+    "required":true,
+    "id":"form_father_qualification"
+  },
+  {
+    "uid": 5,
+    "type": "text",
+    "name":"fatherOccupation",
+    "label": "Occupation",
+    "placeholder": "",
+    "autofocus": false,
+    "required":true,
+    "id":"form_father_occupation"
+  }
+]
