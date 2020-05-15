@@ -13,7 +13,7 @@ export const FormInput = (props) => {
 
   return (
     <div className="inputContainer">
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>{label}<sup>*</sup></label>
       <input
         type={type}
         name={name}
