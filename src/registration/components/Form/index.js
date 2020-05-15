@@ -3,6 +3,12 @@ import formJson from "./Form.json";
 import { FormInput } from "./Form";
 
 export class FormParent extends React.Component {
+  constructor() {
+    super();
+    this.formTag = React.createRef();
+    this.state = {};
+  }
+
   _renderFormInput = () => {
     return formJson.map((item) => {
       const {
@@ -29,14 +35,35 @@ export class FormParent extends React.Component {
       );
     });
   };
+
+  getFormData = () => {
+    const FORM_NODE = this.formTag.current;
+    const formData = new FormData(FORM_NODE);
+    const formObject = {};
+    for (let eachFormItem of formData) {
+      formObject[eachFormItem[0]] = eachFormItem[1];
+    }
+    return formObject;
+  };
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    const finalFormObject = this.getFormData();
+  };
+
   render() {
     const formInput = this._renderFormInput();
     return (
       <main className="registrationForm">
         <div className="formContainer">
-          <form autoComplete="off" method="post" id="tuition-form">
+          <form
+            autoComplete="off"
+            method="post"
+            id="tuition-form"
+            ref={this.formTag}
+            onSubmit={this.handleFormSubmit}
+          >
             {formInput}
-            <button>SUBMIT</button>
+            <button type="submit">SUBMIT</button>
           </form>
         </div>
       </main>
