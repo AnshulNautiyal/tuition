@@ -1,6 +1,8 @@
 import React from "react";
 import formJson from "./Form.json";
 import { FormInput } from "./Form";
+import firebase from 'firebase';
+import moment from 'moment';
 
 export class FormParent extends React.Component {
   constructor() {
@@ -43,11 +45,17 @@ export class FormParent extends React.Component {
     for (let eachFormItem of formData) {
       formObject[eachFormItem[0]] = eachFormItem[1];
     }
-    return formObject;
+    return {
+      ...formObject,
+      registrationDate:`${moment()}`
+    }
   };
   handleFormSubmit = (event) => {
     event.preventDefault();
     const finalFormObject = this.getFormData();
+    const registeredStudent = firebase.database().ref('students-registered');
+    registeredStudent.push(finalFormObject);
+
   };
 
   render() {
