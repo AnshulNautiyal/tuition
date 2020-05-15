@@ -6,7 +6,7 @@
    - let
    - const
    - HTML "name" attribute value
-   - HTML "class" attribute value
+   - HTML "class" attribute value (also use BEM for class naming)
    - JSON key
 
 2. Snake Case

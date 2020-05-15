@@ -4,10 +4,20 @@
     "type": "text",
     "name":"FormStudentName",
     "label": "Student Name",
-    "placeholder": "Enter your name...",
+    "placeholder": "Enter your Name",
     "autofocus": true,
     "required":true,
     "id":"form_student_name"
+  },
+  {
+    "uid": 6,
+    "type": "number",
+    "name":"studentMobileNumber",
+    "label": "Mobile No.",
+    "placeholder": "Enter your Mobile Number",
+    "autofocus": false,
+    "required":true,
+    "id":"form_student_Mobile"
   },
   {
     "uid": 2,
@@ -24,7 +34,7 @@
     "type": "text",
     "name":"studentFatherName",
     "label": "Father's Name",
-    "placeholder": "Enter your father name...",
+    "placeholder": "Enter your Father Name",
     "autofocus": false,
     "required":true,
     "id":"form_father_name"

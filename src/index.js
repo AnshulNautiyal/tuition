@@ -2,10 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import { FormParent } from "./registration/components/Form";
+import { HeaderParent } from "./common-component/Header";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
+    <HeaderParent />
     <FormParent />
   </React.StrictMode>,
   document.getElementById("root")

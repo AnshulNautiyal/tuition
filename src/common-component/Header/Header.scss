@@ -1,0 +1,27 @@
+.header {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: $white;
+    box-shadow: 0 8px 6px -6px #bbbbbb;
+    z-index: 1;
+    .header_container {
+        width: 100%;
+        @include defaultFlex();
+        height: 60px;
+        .header__hamburgerMenu {
+
+        }
+        .header__tag{
+            @include defaultTextCss($form-family, $ft40, 900, 1.29,$white);
+            letter-spacing: 2px;
+            @include backGroundGradient();
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 #900efd, 0 2px #f7f7f7, 0 4px #9c8e8e;
+        }
+    }
+
+}
