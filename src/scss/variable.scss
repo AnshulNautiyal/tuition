@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;0,700;0,800;0,900;1,300;1,400&display=swap");
 
 // Font Family
-$form-family: 'Nunito', sans-serif;
+$form-family: "Nunito", sans-serif;
 
 //Font Size
 
@@ -10,9 +10,13 @@ $ft16: 16px;
 $ft20: 20px;
 $ft40: 40px;
 
-
 // color
-$baseColor:#000;
-$label:#a9a7a7;
-$border:#dadada;
-$white :#fff;
+$baseColor: #000;
+$loader: #00000000;
+$label: #a9a7a7;
+$border: #dadada;
+$white: #fff;
+$loader-background: #000000cf;
+
+// z-index
+$z-index: 10; // For Loader

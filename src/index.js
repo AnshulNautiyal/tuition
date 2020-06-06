@@ -1,16 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import * as firebase from 'firebase';
+import * as serviceWorker from "./serviceWorker";
 import "./index.scss";
+import * as firebase from 'firebase';
+import FIREBASE_CONFIG from './config/firebase-config'
 import { FormParent } from "./registration/components/Form";
 import { HeaderParent } from "./common-component/Header";
-import * as serviceWorker from "./serviceWorker";
-import FIREBASE_CONFIG from './config/firebase-config'
+import { Loader } from "./common-component/Loader/Loader";
+
 
 firebase.initializeApp(FIREBASE_CONFIG);
 
 ReactDOM.render(
   <React.StrictMode>
+    <Loader />
     <HeaderParent />
     <FormParent />
   </React.StrictMode>,
