@@ -1,0 +1,47 @@
+.modal-section {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100vw;
+  background-color: #0000008f;
+  @include defaultFlex();
+  display: none;
+  .modal {
+    width: 90vw;
+    background-color: $white;
+    border-radius: 8px;
+    @include defaultFlex();
+    &__container {
+      padding: 20px 0;
+      @include defaultFlex(column);
+      div {
+        margin-bottom: 20px;
+      }
+      &--image {
+        width: 80%;
+        img {
+          width: 100%;
+        }
+      }
+      &--header {
+        font-size: 35px;
+        letter-spacing: 1.5px;
+      }
+      &--subtext {
+        font-size: 20px;
+      }
+      &--button {
+        width: 100px;
+        height: 50px;
+        background-color: #900efd;
+        color: $white;
+        @include defaultFlex();
+        font-size: 20px;
+        letter-spacing: 2px;
+        border-radius: 6px;
+      }
+    }
+  }
+}

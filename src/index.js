@@ -7,6 +7,7 @@ import FIREBASE_CONFIG from './config/firebase-config'
 import { FormParent } from "./registration/components/Form";
 import { HeaderParent } from "./common-component/Header";
 import { Loader } from "./common-component/Loader/Loader";
+import { FormSubmitModalParent } from "./common-component/formSubmitModal";
 
 
 firebase.initializeApp(FIREBASE_CONFIG);
@@ -14,6 +15,7 @@ firebase.initializeApp(FIREBASE_CONFIG);
 ReactDOM.render(
   <React.StrictMode>
     <Loader />
+    <FormSubmitModalParent />
     <HeaderParent />
     <FormParent />
   </React.StrictMode>,
