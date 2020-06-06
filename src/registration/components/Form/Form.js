@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const FormInput = (props) => {
   const {
@@ -10,6 +10,7 @@ export const FormInput = (props) => {
     autofocus = false,
     required = true,
     id = "",
+    reset = false,
   } = props;
 
   const [userInput, setUserInput] = useState("");
@@ -18,6 +19,9 @@ export const FormInput = (props) => {
     const { value = "" } = event.target;
     setUserInput(value);
   };
+  useEffect(() => {
+    setUserInput("");
+  }, [reset]);
 
   return (
     <div className="inputContainer">

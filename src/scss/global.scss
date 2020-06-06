@@ -1,0 +1,4 @@
+@import "./../common-component/Loader/loader.scss";
+body {
+  @extend %loader;
+}

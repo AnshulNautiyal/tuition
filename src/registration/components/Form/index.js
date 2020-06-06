@@ -1,14 +1,16 @@
 import React from "react";
 import formJson from "./Form.json";
 import { FormInput } from "./Form";
-import firebase from 'firebase';
-import moment from 'moment';
+import firebase from "firebase";
+import moment from "moment";
 
 export class FormParent extends React.Component {
   constructor() {
     super();
     this.formTag = React.createRef();
-    this.state = {};
+    this.state = {
+      resetToggle: false,
+    };
   }
 
   _renderFormInput = () => {
@@ -33,6 +35,7 @@ export class FormParent extends React.Component {
           autofocus={autofocus}
           required={required}
           id={id}
+          reset={this.state.resetToggle}
         />
       );
     });
@@ -47,15 +50,26 @@ export class FormParent extends React.Component {
     }
     return {
       ...formObject,
-      registrationDate:`${moment()}`
-    }
+      registrationDate: `${moment()}`,
+    };
   };
   handleFormSubmit = (event) => {
     event.preventDefault();
     const finalFormObject = this.getFormData();
-    const registeredStudent = firebase.database().ref('students-registered');
-    registeredStudent.push(finalFormObject);
-
+    const loader = document.getElementById("loader") || "";
+    loader.style.display = "flex";
+    /*
+      I use set timeout because firebase real time data base is so fast that
+    loader did not get time to load in dom so put 1 sec delay.
+    */
+    setTimeout(() => {
+      const registeredStudent = firebase.database().ref("students-registered");
+      registeredStudent.push(finalFormObject);
+      loader.style.display = "none";
+      this.setState({
+        resetToggle: !this.state.resetToggle,
+      });
+    }, 1000);
   };
 
   render() {
