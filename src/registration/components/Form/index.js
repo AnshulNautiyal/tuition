@@ -48,8 +48,10 @@ export class FormParent extends React.Component {
     for (let eachFormItem of formData) {
       formObject[eachFormItem[0]] = eachFormItem[1];
     }
+    const studentClass = document.getElementById("form_class").value;
     return {
       ...formObject,
+      studentClass,
       registrationDate: `${moment()}`,
     };
   };

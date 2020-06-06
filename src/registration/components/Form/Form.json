@@ -42,13 +42,13 @@
   },
   {
     "uid": 4,
-    "type": "text",
-    "name":"fatherQualification",
-    "label": "Qualification",
+    "type": "dropDown",
+    "name":"class",
+    "label": "Class",
     "placeholder": "",
     "autofocus": false,
     "required":true,
-    "id":"form_father_qualification"
+    "id":"form_class"
   },
   {
     "uid": 5,
