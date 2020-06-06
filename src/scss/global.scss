@@ -1,4 +1,10 @@
 @import "./../common-component/Loader/loader.scss";
 body {
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+  #root {
+    position: relative;
+    padding-top: 50px;
+  }
   @extend %loader;
 }
